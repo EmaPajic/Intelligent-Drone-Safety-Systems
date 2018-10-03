@@ -27,6 +27,13 @@
 
 \definecolor{emphcolor}{rgb}{0.65,0.78,0.29}
 
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 
@@ -60,13 +67,19 @@
 
 % Intro %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{frame}{Motivation}
+\begin{frame}{Goal}
 
-  \large
-  Finding fires in early stages.
-
-  \includegraphics[width=0.6\textwidth]{california_fire.jpg}
+ 
+  Prevent fires by:
+  \vspace{-2mm}
+  \begin{itemize}
+  \item Providing \textbf{tools to help forest guards}.
+  \item Using drones to \textbf{automatically patrol vulnerable areas}.
+  \end{itemize}
   
+  \includegraphics[width=0.6\textwidth]{california_fire.jpg}
+%
+  \blfootnote{https://upload.wikimedia.org/wikipedia/commons/9/98/Simi\_Valley\_fire\_California\_USA.jpg}
 \end{frame}
 
 
@@ -82,8 +95,8 @@
       \begin{figure}
         \centering \includegraphics[width=0.5\textwidth]{park}
       \end{figure}
-    \item Use supervised machine learning (linear regression) to infer the
-      \textbf{probability of fire}.
+    \item Use supervised machine learning (linear regression) to infer a
+      function for the \textbf{probability of fire}.
 \end{itemize}
 \end{frame}
 
@@ -125,7 +138,7 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{What did we do here? -- Summary}
+\begin{frame}{Summary -- What did we do?}
 
 \large
   \begin{itemize}
@@ -133,8 +146,18 @@
   \item \textbf{Processed} the data.
   \item \textbf{Built a model} of the \textbf{risk of fire}.
   \item Built a \textbf{visualization tool} for the forest guards.
-  \item Programmed the \textbf{patrolling algorithm} (using ROS).
+  \item Programmed a \textbf{patrolling algorithm} (using ROS).
   \end{itemize}
+
+  \centering
+
+  \includegraphics[width=0.2\textwidth]{california_fire.jpg}
+  \hspace{2mm}
+  \includegraphics[width=0.2\textwidth]{park}
+    \hspace{2mm}
+    \includegraphics[width=0.2\textwidth]{../images/Figure_summer}
+    \hspace{2mm}
+  \includegraphics[width=0.2\textwidth]{robot}
   
 \end{frame}
 
